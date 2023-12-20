@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="course.png" />
+    <None Remove="teacher.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.Payments.Weixin" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="course.png" />
+    <Resource Include="teacher.png" />
+  </ItemGroup>
+
+</Project>

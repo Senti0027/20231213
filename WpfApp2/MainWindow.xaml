@@ -25,7 +25,7 @@
             <Button x:Name="GetWebDataBtn" Content="抓取資料" VerticalAlignment="Center" Height="40" Width="50" Margin="50,0,0,0" Click="GetWebDataBtn_Click"/>
         </StackPanel>
         <TextBlock x:Name="ContentBlock" Grid.Column="0" Grid.Row="1" Background="Beige" FontSize="14" FontFamily="Cascadia Code"/>
-        <GridSplitter  Grid.Column="1" Grid.Row="1" /> <!--重新分配 中 Grid 兩個數據列之間的空間-->
-
+        <GridSplitter  Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" Background="LightGray"/> <!--重新分配 中 Grid 兩個數據列之間的空間-->
+        <Grid Grid.Row="1" Grid.Column="2"/>
     </Grid>
 </Window>

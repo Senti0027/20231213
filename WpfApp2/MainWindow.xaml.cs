@@ -36,6 +36,9 @@ namespace WpfApp2
 
         }
 
-       
+        private void GetWebDataBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,12 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="爬蟲" Height="600" Width="1200">
+        Title="AQI空氣指標" Height="800" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="500*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="500*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="80" Width="Auto" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Width="900">
+                <Label Content="每小時提供各測站之空氣品質指標（AQI），原始資料版本公告於空氣品質監測網https://airtw.moenv.gov.tw" Height="40" VerticalAlignment="Center"  VerticalContentAlignment="Center" Margin="50,0,0,0"/>
+                <TextBox x:Name="UrlTextBox" VerticalAlignment="Center" Height="40" Margin="50, 0, 0, 0" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            </StackPanel>
+            <Button x:Name="GetWebDataBtn" Content="抓取資料" VerticalAlignment="Center" Height="40" Width="50" Margin="50,0,0,0" Click="GetWebDataBtn_Click"/>
+        </StackPanel>
+        <TextBlock x:Name="ContentBlock" Grid.Column="0" Grid.Row="1" Background="Beige" FontSize="14" FontFamily="Cascadia Code"/>
+        <GridSplitter  Grid.Column="1" Grid.Row="1" /> <!--重新分配 中 Grid 兩個數據列之間的空間-->
+
     </Grid>
 </Window>

@@ -16,9 +16,4 @@
     <PackageReference Include="Plugin.Payments.Weixin" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="course.png" />
-    <Resource Include="teacher.png" />
-  </ItemGroup>
-
 </Project>

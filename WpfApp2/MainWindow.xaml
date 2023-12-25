@@ -33,14 +33,12 @@
                 <RowDefinition Height="5"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
-            <StatusBar>
-                <StatusBarItem Margin="100,0,0,0">
-                    <TextBlock x:Name="StatusTextBlock" Text="Status"/>
-                </StatusBarItem>
-            </StatusBar>
-            
         </Grid>
-        
-        
+        <StatusBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <StatusBarItem Margin="100,0,0,0">
+                <TextBlock x:Name="StatusTextBlock" Text="Status"/>
+            </StatusBarItem>
+        </StatusBar>
+
     </Grid>
 </Window>

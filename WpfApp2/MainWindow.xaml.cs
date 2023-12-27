@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Net.Http.Json;
+using LiveCharts;
 
 namespace WpfApp2
 {
@@ -27,7 +28,12 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        string url = "https://data.moenv.gov.tw/api/v2/aqx_p_432?api_key=e8dd42e6-9b8b-43f8-991e-b3dee723a52d&limit=1000&sort=ImportDate%20desc&format=JSON";
+        AQIdata aqidata = new AQIdata();
+        List<Field> fields = new List<Field>;
+        List<Record> records = new List<Record>;
+        List<Record> selectRecord = new List<Record>;
+        SeriesCollection seriesCollection = new SeriesCollection();
 
         public MainWindow()
         {

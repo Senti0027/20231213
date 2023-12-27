@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Plugin.Payments.Weixin" Version="1.0.0" />
   </ItemGroup>
 

@@ -40,5 +40,15 @@ namespace WpfApp2
         {
 
         }
+
+        private void RecordDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RecordDataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+
+        }
     }
 }

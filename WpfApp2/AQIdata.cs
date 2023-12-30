@@ -1,4 +1,4 @@
-﻿namespace _2023_WpfApp6
+﻿namespace _2023_WpfApp2
 {
 
     public class AQIdata

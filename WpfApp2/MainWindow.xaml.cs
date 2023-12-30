@@ -20,7 +20,8 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Net.Http.Json;
 using LiveCharts;
-using _2023_WpfApp6;
+using _2023_WpfApp2;
+using System.Net.Http;
 
 namespace WpfApp2
 {
@@ -43,9 +44,25 @@ namespace WpfApp2
             selectedRecords.Clear();
         }
 
-        private void GetWebDataBtn_Click(object sender, RoutedEventArgs e)
+        private async void GetWebDataBtn_Click(object sender, RoutedEventArgs e)// await async 非同步
         {
+            ContentTextBox.Text= "正在抓取資料......";
+            string jsontext = await FetchContentAsync(url);
+        }
 
+        private async Task<string> FetchContentAsync(string url)
+        {
+            try
+            {
+                using (HttpClient client=new HttpClient())
+                {
+                    return await client.GetStringAsync(url);
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"發生錯誤: {ex.Message}";
+            }
         }
 
         private void RecordDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

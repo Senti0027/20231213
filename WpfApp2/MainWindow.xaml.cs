@@ -48,6 +48,18 @@ namespace WpfApp2
         {
             ContentTextBox.Text= "正在抓取資料......";
             string jsontext = await FetchContentAsync(url);
+            ContentTextBox.Text = jsontext;
+            aqidata =JsonSerializer.Deserialize<AQIdata>(jsontext);
+            fields= aqidata.fields.ToList();
+            records = aqidata.records.ToList();
+            selectedRecords = records;
+            StatusTextBlock.Text = $"共有 {records.Count} 筆資料";
+            DisplayAQIData();
+        }
+
+        private void DisplayAQIData()
+        {
+            RecordDataGrid.ItemsSource = records;
         }
 
         private async Task<string> FetchContentAsync(string url)

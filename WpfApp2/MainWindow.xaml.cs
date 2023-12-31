@@ -60,6 +60,28 @@ namespace WpfApp2
         private void DisplayAQIData()
         {
             RecordDataGrid.ItemsSource = records;
+            DataWrapPanel.Children.Clear();
+            foreach(var field in fields)
+            {
+                var propertyInfo = typeof(Record).GetProperty(field.id);
+                if(propertyInfo != null )
+                {
+                    var value= propertyInfo.GetValue(records[0]) as string;
+                    if(double.TryParse(value, out double v))
+                    {
+                        CheckBox cb = new CheckBox()
+                        {
+                            Content = field.info.label,
+                            Tag = field.id,
+                            Margin = new Thickness(5),
+                            Width = 120,
+                            FontSize = 14,
+                            FontWeight = FontWeights.Bold,
+                        };
+                        DataWrapPanel.Children.Add(cb);
+                    }
+                }
+            }
         }
 
         private async Task<string> FetchContentAsync(string url)
